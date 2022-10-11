@@ -1,6 +1,4 @@
-FROM: ubuntu
-RUN: apt-get update 
-RUN:  apt install nginx -y
-copy: index.html /var/www/html/
-EXPOSE: 80
-CMD: ["nginx","-g","daemon off;"]
+FROM ubuntu
+RUN apt update && apt install -y nginx
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
