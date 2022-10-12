@@ -1,5 +1,5 @@
-FROM node:8.16.1-alpine
-EXPOSE 8080
-EXPOSE 5858
-RUN npm install
-CMD ["npm","start"]
+FROM  ubuntu:20.04
+MAINTAINER ganesh
+RUN apt update && apt install -y nginx
+EXPOSE 80
+CMD ["nginx", "-g","daemon off;"]
