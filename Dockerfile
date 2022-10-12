@@ -1,4 +1,7 @@
-FROM ubuntu
-RUN apt update && apt install -y nginx
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+FROM node:8.16.1-alpine
+EXPOSE 8080
+EXPOSE 5858
+WORKDIR /app
+ADD . /app
+RUN npm install
+CMD ["npm","start"]
